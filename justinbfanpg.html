@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Justin Bieber — Fanpage</title>
+  <meta name="description" content="A modern fanpage celebrating Justin Bieber: bio, discography, videos, tour dates, and a gallery." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b10;
+      --surface: #13131a;
+      --surface-2: #1b1b25;
+      --text: #f4f6fb;
+      --muted: #b6b8c3;
+      --brand: #ff5ab1; /* neon pink */
+      --brand-2: #7aa6ff; /* soft blue */
+      --ring: rgba(255, 90, 177, 0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% 0%, #12121a 0%, var(--bg) 40%),
+                  radial-gradient(1000px 600px at 90% 10%, #0f0f17 0%, var(--bg) 60%);
+      line-height: 1.6;
+    }
+
+    /* --- Utility --- */
+    .container { width: min(1150px, 92%); margin: 0 auto; }
+    .pill { display: inline-block; padding: 8px 14px; border-radius: 999px; background: linear-gradient(90deg, var(--brand), var(--brand-2)); color: #0e0e14; font-weight: 700; letter-spacing: 0.3px; }
+    .subtitle { color: var(--muted); font-weight: 400; }
+    .card { background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%); border: 1px solid #232334; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 14px; text-decoration: none; color: var(--text); background: #222233; border: 1px solid #2d2d42; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.25); background: #2a2a44; }
+
+    /* --- Header --- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,11,16,0.85), rgba(11,11,16,0.35));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .5px; }
+    .brand .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(45deg, var(--brand), var(--brand-2)); box-shadow: 0 6px 16px var(--ring); }
+    nav ul { display: flex; gap: 14px; list-style: none; padding: 0; margin: 0; }
+    nav a { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 10px; border: 1px solid transparent; }
+    nav a:hover { color: var(--text); border-color: #2a2a3a; background: #171723; }
+
+    /* --- Hero --- */
+    .hero { position: relative; }
+    .hero-inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: center; padding: 56px 0 26px; }
+    .hero h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.05; margin: 10px 0 12px; }
+    .hero p { font-size: 18px; color: var(--muted); margin: 0 0 22px; }
+    .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero .portrait {
+      position: relative; aspect-ratio: 4/5; border-radius: calc(var(--radius) + 6px); overflow: hidden;
+      background: #0f0f16 url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+      box-shadow: 0 30px 70px rgba(0,0,0,.45), 0 0 0 1px #26263a inset;
+    }
+    .hero .portrait::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 70% at 70% 30%, rgba(255,90,177,.25), transparent 60%), radial-gradient(80% 70% at 20% 70%, rgba(122,166,255,.18), transparent 60%); mix-blend-mode: screen; }
+
+    /* --- Sections --- */
+    section { padding: 56px 0; }
+    section h2 { font-size: clamp(26px, 3.6vw, 34px); margin: 0 0 8px; }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; }
+    .about .fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+    .fact { text-align: center; padding: 16px; border-radius: 16px; border: 1px solid #27273b; background: #141420; }
+    .fact strong { font-size: 22px; display: block; }
+    .fact span { color: var(--muted); font-size: 12px; letter-spacing: .3px; }
+
+    /* Discography */
+    .albums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .album { overflow: hidden; }
+    .album img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; border: 1px solid #26263a; }
+    .album h3 { margin: 10px 4px 0; font-size: 16px; }
+    .album .meta { color: var(--muted); font-size: 12px; margin: 2px 4px 0; }
+
+    /* Video */
+    .video-embed { position: relative; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; border: 1px solid #26263a; box-shadow: var(--shadow); }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* Tour */
+    .tour-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .tour-card { padding: 16px; border: 1px solid #27273b; background: #141420; border-radius: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .tour-card .date { font-weight: 700; }
+    .tour-card .place { color: var(--muted); font-size: 14px; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; border: 1px solid #26263a; opacity: .92; transition: transform .25s ease, opacity .25s ease; }
+    .gallery img:hover { transform: translateY(-4px); opacity: 1; }
+
+    /* Newsletter */
+    .newsletter { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; align-items: center; }
+    .newsletter form { display: flex; gap: 12px; }
+    .newsletter input[type="email"] { flex: 1; padding: 14px 16px; background: #10101a; border: 1px solid #2a2a3a; border-radius: 12px; color: var(--text); }
+    .newsletter button { padding: 14px 18px; border: 0; border-radius: 12px; background: linear-gradient(90deg, var(--brand), var(--brand-2)); color: #0b0b10; font-weight: 800; cursor: pointer; box-shadow: 0 8px 22px var(--ring); }
+    .newsletter button:hover { filter: brightness(1.05); }
+
+    /* Footer */
+    footer { padding: 46px 0; border-top: 1px solid #222236; color: var(--muted); }
+    .socials { display: flex; gap: 10px; }
+    .icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; border: 1px solid #26263a; background: #151526; text-decoration: none; color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .albums { grid-template-columns: repeat(3, 1fr); }
+      .tour-list { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(4, 1fr); }
+      .newsletter { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .albums { grid-template-columns: repeat(2, 1fr); }
+      .tour-list { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 34px; }
+    }
+
+    /* Fun glow */
+    .glow { position: absolute; inset: -2px; border-radius: inherit; pointer-events: none; background: radial-gradient(100% 60% at 50% 0%, rgba(255,90,177,.18), transparent 60%), radial-gradient(100% 60% at 70% 90%, rgba(122,166,255,.18), transparent 60%); filter: blur(16px); opacity: .6; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Justin Bieber Fanpage</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#discography">Discography</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#tour">Tour</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="pill" aria-label="Fan-made page">Belieber Zone</span>
+        <h1>Believing Since Day One ✨</h1>
+        <p>Welcome to a fan-made space celebrating Justin Bieber — from <em>My World</em> to the latest hits. Explore albums, watch videos, and relive iconic moments.</p>
+        <div class="cta">
+          <a class="btn" href="#discography">Explore the Music</a>
+          <a class="btn" href="#newsletter">Get Updates</a>
+        </div>
+      </div>
+      <div class="portrait" role="img" aria-label="Stylized artist portrait background image."></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about">
+      <div>
+        <h2>About Justin</h2>
+        <p class="subtitle">Singer • Songwriter • Global Pop Icon</p>
+        <p>Discovered on YouTube and launched into stardom, Justin Bieber has delivered chart-topping singles, genre-blending albums, and unforgettable collaborations. His evolution from teen sensation to mature artist has inspired fans worldwide.</p>
+        <div class="fact-grid">
+          <div class="fact"><strong>2009</strong><span>Debut EP • <em>My World</em></span></div>
+          <div class="fact"><strong>2B+</strong><span>Streams on top hits</span></div>
+          <div class="fact"><strong>GRAMMY</strong><span>Awards & nominations</span></div>
+        </div>
+      </div>
+      <div class="card" style="padding:20px; position: relative; overflow:hidden;">
+        <div class="glow"></div>
+        <h3 style="margin-top:0;">Quick Link
