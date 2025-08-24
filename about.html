@@ -3,108 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Justin Bieber</title>
+  <title>About Justin Bieber</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-      color: #333;
-    }
-
-    header {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .content {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    h2 {
-      color: #ff4d6d;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-    }
-
-    footer a {
-      color: #ff4d6d;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #0f0f1a, #1a1a2e); color: #fff; margin: 0; }
+    header, footer { background: rgba(15, 15, 26, 0.95); padding: 1rem 5%; }
+    header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+    header h1 { font-size: 1.4rem; background: linear-gradient(to right, #f093fb, #f5576c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
+    nav ul li a { text-decoration: none; color: #ddd; transition: color 0.3s ease; }
+    nav ul li a:hover { color: #f093fb; }
+    .content { max-width: 900px; margin: 3rem auto; padding: 0 2rem; text-align: center; }
+    .content h2 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800; }
+    .content p { font-size: 1.1rem; color: #bbb; margin-bottom: 1.5rem; }
+    footer { text-align: center; margin-top: 5rem; color: #aaa; }
+    footer h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; }
+    .footer-links a { color: #f093fb; text-decoration: none; transition: color 0.3s ease; }
+    .footer-links a:hover { color: #f5576c; }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <h1>About Justin Bieber</h1>
+    <h1>Justin Bieber Fanpage</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="discography.html">Discography</a>
-      <a href="https://youtu.be/kffacxfA7G4?si=5Qyt_W65wudxM6Cu" target="_blank">Video</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="disc.html">Discography</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- Content -->
-  <div class="content">
-    <h2>Overview</h2>
-    <p>
-      Justin Drew Bieber (born March 1, 1994) is a Canadian singer and songwriter who rose to fame as a teenager after being discovered on YouTube in 2008. 
-      He quickly became a global sensation with his debut single <em>“One Time”</em> and breakout hit <em>“Baby”</em>.
-    </p>
-    <p>
-      Over the years, Bieber has evolved from a teen idol into one of the most influential pop and R&B artists in the world. 
-      His career highlights include multiple Grammy Awards, chart-topping albums, and collaborations with some of the biggest names in the music industry.
-    </p>
-    <p>
-      Known for hits such as <em>“Sorry”</em>, <em>“Love Yourself”</em>, <em>“Peaches”</em>, and <em>“Stay”</em>, Justin Bieber continues to inspire millions of fans worldwide. 
-      Beyond music, he is also active in philanthropy and often uses his platform to promote mental health awareness and global causes.
-    </p>
-  </div>
+  <section class="content">
+    <h2>About Justin Bieber</h2>
+    <p>Justin Bieber is a Canadian singer, songwriter, and performer who rose to fame as a teenager with his debut single <em>One Time</em>. Since then, he has become one of the most influential global pop icons.</p>
+    <p>With chart-topping albums like <em>My World 2.0</em>, <em>Purpose</em>, and <em>Justice</em>, Bieber has consistently redefined pop and R&B. His music explores themes of love, fame, faith, and redemption, resonating with millions worldwide.</p>
+    <p>Beyond music, Justin has used his platform to raise awareness on mental health and social causes, showing his growth both as an artist and an individual.</p>
+  </section>
 
-  <!-- Footer -->
   <footer>
-    <p>Quick Links:</p>
-    <a href="https://www.justinbiebermusic.com/" target="_blank">Official Website</a> |
-    <a href="https://www.instagram.com/justinbieber/?hl=en" target="_blank">Instagram</a> |
-    <a href="https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s" target="_blank">Spotify</a>
-    <p style="margin-top:10px;">Made with ❤️ by a Belieber</p>
+    <h3>Quick Links</h3>
+    <div class="footer-links">
+      <a href="https://www.justinbiebermusic.com/" target="_blank">Official Page</a>
+      <a href="https://www.instagram.com/justinbieber/?hl=en" target="_blank">Instagram</a>
+      <a href="https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s" target="_blank">Spotify</a>
+    </div>
+    <p style="margin-top:1rem;">© 2025 Justin Bieber Fanpage | For Beliebers 💜</p>
   </footer>
 </body>
 </html>
