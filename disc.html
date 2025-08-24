@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Justin Bieber Fanpage</title>
+  <title>Discography - Justin Bieber</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     nav {
@@ -40,33 +40,24 @@
       text-decoration: underline;
     }
 
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Justin_Bieber_in_2015.jpg") no-repeat center/cover;
-      color: white;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    .content {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
 
-    .hero h2 {
-      font-size: 2rem;
+    h2 {
+      color: #ff4d6d;
       margin-bottom: 1rem;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background: #ff4d6d;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+    .album {
+      margin-bottom: 2rem;
     }
 
-    .btn:hover {
-      background: #e63950;
+    .album h3 {
+      margin-bottom: 0.3rem;
+      color: #111;
     }
 
     footer {
@@ -91,7 +82,7 @@
 <body>
   <!-- Header -->
   <header>
-    <h1>Justin Bieber Fanpage</h1>
+    <h1>Justin Bieber Discography</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -100,12 +91,35 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Welcome Beliebers!</h2>
-    <p>Celebrate Justin Bieber’s music, journey, and legacy.</p>
-    <a href="https://www.youtube.com/@justinbieber" target="_blank" class="btn">Explore the Music</a>
-  </section>
+  <!-- Content -->
+  <div class="content">
+    <h2>Albums</h2>
+
+    <div class="album">
+      <h3>My World 2.0 (2010)</h3>
+      <p>Includes the global hit <em>“Baby”</em> and established Justin as an international superstar.</p>
+    </div>
+
+    <div class="album">
+      <h3>Believe (2012)</h3>
+      <p>Marked a more mature sound with hits like <em>“Boyfriend”</em> and <em>“Beauty and a Beat”</em>.</p>
+    </div>
+
+    <div class="album">
+      <h3>Purpose (2015)</h3>
+      <p>Critically acclaimed for singles like <em>“Sorry”</em>, <em>“What Do You Mean?”</em>, and <em>“Love Yourself”</em>.</p>
+    </div>
+
+    <div class="album">
+      <h3>Changes (2020)</h3>
+      <p>Focused on R&B influences, featuring <em>“Yummy”</em> and collaborations with top artists.</p>
+    </div>
+
+    <div class="album">
+      <h3>Justice (2021)</h3>
+      <p>Featured the global hit <em>“Peaches”</em> and the Billboard #1 collaboration <em>“Stay”</em> with The Kid LAROI.</p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
