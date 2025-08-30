@@ -1,0 +1,110 @@
+/* styles.css - Challenge #1 (Skeleton) */
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-color: rgb(161, 161, 161); */
+}
+
+.container {
+    margin: auto;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-header {
+    text-align: center;
+    color: pink;
+    font-weight: bold;
+    max-width: 100%;
+}
+
+.mascot-placeholder {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+
+}
+#mascot-image {
+    width: 100%;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+}
+.tagline {
+    font-style: italic;
+    color: black;
+}
+
+.p {
+    text-align: left;
+    max-width: 50%;
+}
+
+.about {
+    max-width: 100%;
+    line-height: 130%; /* 100% is the default */
+    margin-bottom: 16px;
+}
+
+.actions {
+    display: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.buy-tickets {
+    color: white;
+    background-color: rgb(11, 218, 11);
+    height: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0 16px;
+    box-shadow: 0 4px 16px rgba(8, 232, 221, 0.776);
+    border: none;
+    /* horizontal offset, vertical offset, blur radius */
+    margin:10px 16px;
+    transition: 
+        background 0.2s,
+        transform 0.1s,
+        box-shadow 0.1s;
+    cursor: pointer;
+}
+
+.make-donation {
+    color: white;
+    background-color: rgb(6, 6, 242);
+    height: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0 16px;
+    box-shadow: 0 4px 16px rgba(250, 98, 229, 0.776);
+    border: none;
+    /* horizontal offset, vertical offset, blur radius */
+    margin: 10px 16px;
+    transition: 
+        background 0.2s,
+        transform 0.1s,
+        box-shadow 0.1s;
+    cursor: pointer;
+}
+
+.buy-tickets:hover {
+    background-color: green;
+    transform: translateY(-4px); /* lifts up the button */
+    box-shadow: 0 8px 32px rgba(8, 232, 221, 1); /* stronger shadow */ 
+}
+
+.make-donation:hover {
+    background-color: rgb(0, 0, 169);
+    transform: translateY(-4px); /* lifts up the button */
+    box-shadow: 0 8px 32px rgb(250, 98, 229); /* stronger shadow */ 
+}
+
+.site-footer {
+    font-size: 80%;
+    text-align: center;
+}
