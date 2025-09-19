@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 2 - XSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Example 2 - XSS</h3>
+
+    <div style="border: 2px solid red; margin-bottom:20px; padding: 10px 10px;">
+        <p>
+            XSS stands for Cross-Site Scripting. It is a type of security vulnerability typically found in web applications, where an attacker injects malicious scripts into content that is served to other users. These scripts can run in the victim's browser, potentially leading to data theft, session hijacking, and other malicious activities.
+        </p>
+        <p>
+            In XSS attacks, attackers exploit the lack of proper input validation or sanitization on a website, allowing them to inject malicious code (usually JavaScript) that gets executed when users view the affected web page.
+        </p>
+        <p>
+            Modern browsers, including Google Chrome, have built-in security mechanisms like Content Security Policy (CSP) and browser-specific XSS filters that help prevent basic Cross-Site Scripting (XSS) attacks. These mechanisms may automatically block or sanitize certain types of XSS.
+        </p>
+        <p>
+            However, if you'd like to see how the attack works for learning purposes, you can disable some of these protections (though it's not recommended to do this in real-world scenarios).
+        </p>
+        <p>
+            Try the following string as input in the below form:
+            <pre>   &lt;p onclick="alert('Hacked!')"&gt;Click me!&lt;/p&gt;</pre>
+        </p>
+    </div>
+    
+
+    <form id="commentForm">
+        <input type="text" id="commentInput" placeholder="Enter your comment" size="50">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <div id="comments"></div>
+
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get the user's input
+            const comment = document.getElementById('commentInput').value;
+            
+            // Insert the comment into the page using innerHTML (which is unsafe)
+            document.getElementById('comments').innerHTML += `<p>${comment}</p>`;
+            
+            // Clear the input
+            document.getElementById('commentInput').value = '';
+        });
+    </script>
+</body>
+</html>
